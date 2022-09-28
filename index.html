@@ -24,14 +24,20 @@
 			헤더
 		</header>
 		<!-- //header -->
-		<!-- main-visual -->
-		<div class="main-visual">
-			메인 비주얼
-		</div>
-		<!-- //main-visual -->
 		<!-- container -->
 		<div id="container">
-			컨테이너
+			<!-- main-visual -->
+			<div class="main-visual">
+				<h2 class="main-slogan">Make believe.</h2>
+				<p class="main-txt">믿음을 실현합니다.</p>
+				<p class="sub-txt">끊임없이 개발, 발전하여,<br> 보다 나은 웹서비스를<br> 제공할 수 있도록 하겠습니다.</p>
+			</div>
+			<!-- //main-visual -->
+			<!-- contents -->
+			<div id="contents">
+				본문 내용
+			</div>
+			<!-- //contents -->
 		</div>
 		<!-- //container -->
 		<!-- footer -->
@@ -41,5 +47,32 @@
 		<!-- //footer -->
 	</div>
 	<!-- //wrap -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
+	<script>
+		$(function(){
+			gsap.utils.toArray('.main-visual').forEach(function(section){
+				var mainSlogan = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.main-visual',
+						start: 'top',
+						end: '+=300%',
+						scrub: 0.2,
+						pin: true,
+						toggleClass: 'active'
+						//anticipatePin: 1
+					},
+					defaults: {ease: 'none'}
+				});
+				mainSlogan.fromTo(section.querySelector('.main-slogan'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 0)
+				.fromTo(section.querySelector('.main-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, 0.5)
+				.fromTo(section.querySelector('.main-txt'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 1.5)
+				.fromTo(section.querySelector('.sub-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, 2)
+				.fromTo(section.querySelector('.sub-txt'), {opacity:1}, {opacity:1}, 2.5);
+			});
+		});
+	</script>
+
 </body>
 </html>
