@@ -1,41 +1,55 @@
 @charset "utf-8";
 
 @font-face {
- font-family: 'NanumBarunGothic';
- font-weight: 200;
- src: url(font/eot/NanumBarunGothicUltraLightSubset.eot);
- src: url(font/eot/NanumBarunGothicUltraLightSubset.eot?#iefix) format('embedded-opentype'),
-      url(font/woff2/NanumBarunGothicUltraLightSubset.woff2) format('woff2'),
-      url(font/woff/NanumBarunGothicUltraLightSubset.woff) format('woff'),
-      url(font/ttf/NanumBarunGothicUltraLightSubset.ttf) format('truetype');
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Noto Sans Light'), local('NotoSans-Light'),
+	url(font/eot/NotoSansKR-Light-Hestia.eot),
+	url(font/eot/NotoSansKR-Light-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(font/woff/NotoSansKR-Light-Hestia.woff) format('woff'),
+	url(font/otf/NotoSansKR-Light-Hestia.otf) format('opentype');
 }
 
 @font-face {
- font-family: 'NanumBarunGothic';
- font-weight: 300;
- src: url(font/eot/NanumBarunGothicLightSubset.eot);
- src: url(font/eot/NanumBarunGothicLightSubset.eot?#iefix) format('embedded-opentype'),
-      url(font/woff2/NanumBarunGothicLightSubset.woff2) format('woff2'),
-      url(font/woff/NanumBarunGothicLightSubset.woff) format('woff'),
-      url(font/ttf/NanumBarunGothicLightSubset.ttf) format('truetype');
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+	url(font/eot/NotoSansKR-Regular-Hestia.eot),
+	url(font/eot/NotoSansKR-Regular-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(font/woff/NotoSansKR-Regular-Hestia.woff) format('woff');
 }
+
 @font-face {
- font-family: 'NanumBarunGothic';
- font-weight: 400;
- src: url(font/eot/NanumBarunGothicSubset.eot);
- src: url(font/eot/NanumBarunGothicSubset.eot?#iefix) format('embedded-opentype'),
-      url(font/woff2/NanumBarunGothicSubset.woff2) format('woff2'),
-      url(font/woff/NanumBarunGothicSubset.woff) format('woff'),
-      url(font/ttf/NanumBarunGothicSubset.ttf) format('truetype');
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Noto Sans Medium'), local('NotoSans-Medium'),
+	url(font/eot/NotoSansKR-Medium-Hestia.eot),
+	url(font/eot/NotoSansKR-Medium-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(font/woff/NotoSansKR-Medium-Hestia.woff) format('woff'),
+	url(font/otf/NotoSansKR-Medium-Hestia.otf) format('opentype');
 }
+
 @font-face {
- font-family: 'NanumBarunGothic';
- font-weight: 700;
- src: url(font/eot/NanumBarunGothicBoldSubset.eot);
- src: url(font/eot/NanumBarunGothicBoldSubset.eot?#iefix) format('embedded-opentype'),
-      url(font/woff2/NanumBarunGothicBoldSubset.woff2) format('woff2'),
-      url(font/woff/NanumBarunGothicBoldSubset.woff) format('woff'),
-      url(font/ttf/NanumBarunGothicBoldSubset.ttf) format('truetype');
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+	url(font/eot/NotoSansKR-Bold-Hestia.eot),
+	url(font/eot/NotoSansKR-Bold-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(font/woff/NotoSansKR-Bold-Hestia.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 800;
+	src: local('Noto Sans Black'), local('NotoSans-Black'),
+	url(font/eot/NotoSansKR-Black-Hestia.eot),
+	url(font/eot/NotoSansKR-Black-Hestia.eot?#iefix) format('embedded-opentype'),
+	url(font/woff/NotoSansKR-Black-Hestia.woff) format('woff');
 }
 @font-face {
   font-family: 'Montserrat';
@@ -63,11 +77,11 @@
 
 /* base */
 * {margin:0; padding:0; line-height:140%; -webkit-text-size-adjust:none; -webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box;}
-body {font-family:'Montserrat', 'NanumBarunGothic', '微软雅黑', '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Tahoma, Geneva, sans-serif !important;}
+body {font-family:'Montserrat', 'Noto Sans KR', '微软雅黑', '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Tahoma, Geneva, sans-serif !important;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button {margin:0;padding:0;}
 img,fieldset,iframe {border:0 none;}
 li {list-style:none;}
-input,select,button {font-family:'Montserrat', 'NanumBarunGothic', '微软雅黑', '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Tahoma, Geneva, sans-serif; vertical-align:middle;}
+input,select,button {font-family:'Montserrat', 'Noto Sans KR', '微软雅黑', '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Tahoma, Geneva, sans-serif; vertical-align:middle;}
 img {vertical-align:top;}
 i,em,address {font-style:normal;}
 label,button {cursor:pointer;}
@@ -107,21 +121,15 @@ input[type=text]::-ms-clear {display:none;}
 .slick-vertical .slick-slide {display:block; height:auto; border:1px solid transparent;}
 .slick-arrow.slick-hidden {display:none;}
 
-/* skip_navi */
-#skip_navi {position:absolute; top:0; left:0; width:100%; height:0; z-index:10002;}
-#skip_navi li {float:left;}
-#skip_navi a {font-size:0; color:#fff; white-space:nowrap;}
-#skip_navi a:focus {position:absolute; top:0; left:0; width:100%; height:30px; line-height:30px; text-align:center; font-size:12px; color:#fff; background:#666;}
-
 /* all layout */
 body {min-width:320px; word-break:keep-all; word-wrap:break-word;}
-body.modal_scroll {overflow:hidden;}
+body.modal-scroll {overflow:hidden;}
 body.navOn {overflow-y:hidden;}
 
 /* page */
-#header, #aside {transition:opacity 2s cubic-bezier(0.23, 1, 0.38, 1) 2s;}
-.page_loading #header, .page_loading #aside {opacity:0;}
-.page_complete #header, .page_complete #aside {opacity:1;}
+#header {transition:opacity 2s cubic-bezier(0.23, 1, 0.38, 1) 2s;}
+.page-loading #header {opacity:0;}
+.page-complete #header {opacity:1;}
 #container {position:relative;}
 #contents {height:2000px; background-color:#f5f5f5;}
 
@@ -133,11 +141,42 @@ body.navOn {overflow-y:hidden;}
 
 }
 
+/* intro-layer */
+.intro-layer {opacity:1; visibility:visible; position:fixed; top:0; left:0; width:100%; height:100%; background-color:#fff; z-index:10000; transform:translateX(101%) rotate(0.0001deg); transition:all 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.intro-layer.on {opacity:1; visibility:visible; transform:translateX(0);}
+.intro-layer .logo-svg {opacity:0; visibility:hidden; width:800px; height:auto; position:absolute; top:48%; left:50%; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%); z-index:1; transition:all 1s cubic-bezier(0.23, 1, 0.38, 1);}
+.intro-layer.flip-off .logo-svg {opacity:1; visibility:visible;}
+.intro-layer .logo-svg .dot {fill:#ff0000;}
+.intro-layer .intro-box {position:absolute; top:48%; left:50%; width:100%; padding:10%; text-align:center; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%); z-index:2; transition:all 1s cubic-bezier(0.23, 1, 0.38, 1);}
+.intro-layer.flip-off .intro-box {opacity:0;}
+.intro-layer .intro-box .i-tit {display:none; opacity:0; visibility:hidden; position:relative; margin-bottom:30px; color:#f15959; font-size:24px; font-weight:800; line-height:130%; letter-spacing:-0.5px; transition:all .15s ease-out;}
+.intro-layer .intro-box .i-tit.active {opacity:1; visibility:visible;}
+.intro-layer .intro-box .i-flip {position:relative; height:90px; overflow:hidden;}
+.intro-layer .intro-box .i-flip li {opacity:0; visibility:hidden; transform:translateY(120%); position:absolute; top:0; left:0; display:block; width:100%; height:90px; line-height:90px; margin-bottom:10px; color:#000; font-size:72px; font-weight:800; letter-spacing:-1px; white-space:nowrap; transition:all .75s cubic-bezier(0.23, 1, 0.38, 1);}
+.intro-layer .intro-box .i-flip li.on {opacity:1; visibility:visible; transform:translateY(0);}
+
+@media (max-width:1279px) {
+.intro-layer .logo-svg {width:500px;}
+.intro-layer .intro-box .i-flip {height:80px;}
+.intro-layer .intro-box .i-flip li {height:80px; line-height:80px; font-size:52px;}
+}
+
+@media (max-width:767px) {
+.intro-layer .logo-svg {width:280px;}
+.intro-layer .intro-box {padding:5%;}
+.intro-layer .intro-box .i-flip {height:38px;}
+.intro-layer .intro-box .i-flip li {height:38px; line-height:38px; font-size:26px;}
+}
+
+@media (max-width:320px) {
+.intro-layer .intro-box .i-flip li {font-size:24px;}
+}
+
 /* header */
 #header {position:fixed; top:0; left:0; width:100%;}
 
 /* main-visual */
 .main-visual {position:relative; min-height:calc(100vh + 0px); background-color:#000; overflow:hidden;}
 .main-visual .main-slogan {opacity:0; position:absolute; top:50%; left:50%; color:#fff; font-size:6vw; font-weight:800; text-align:center; white-space:nowrap; line-height:100%; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
-.main-visual .main-txt {opacity:0; position:absolute; top:50%; left:50%; color:#fff; font-size:5vw; font-weight:700; text-align:center; white-space:nowrap; line-height:100%; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
-.main-visual .sub-txt {opacity:0; position:absolute; top:50%; left:50%; color:#fff; font-size:2vw; font-weight:700; text-align:center; line-height:140%; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
+.main-visual .main-txt {opacity:0; position:absolute; top:50%; left:50%; color:#fff; font-size:5vw; font-weight:800; text-align:center; white-space:nowrap; line-height:100%; letter-spacing:-0.024em; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
+.main-visual .sub-txt {opacity:0; position:absolute; top:50%; left:50%; color:#fff; font-size:2vw; font-weight:400; text-align:center; line-height:140%; letter-spacing:-0.024em; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
