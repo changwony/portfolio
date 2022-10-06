@@ -172,6 +172,10 @@ body.navOn {overflow-y:hidden;}
 .intro-layer .intro-box .i-flip li {font-size:24px;}
 }
 
+@media (max-height:500px) {
+.intro-layer.on .logo-svg {height:200%;}
+}
+
 /* header */
 #header {position:fixed; top:0; left:0; width:100%;}
 
