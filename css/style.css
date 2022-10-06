@@ -164,8 +164,8 @@ body.navOn {overflow-y:hidden;}
 @media (max-width:767px) {
 .intro-layer.on .logo-svg {height:101%;}
 .intro-layer .intro-box {padding:5%;}
-.intro-layer .intro-box .i-flip {height:40px;}
-.intro-layer .intro-box .i-flip li {height:40px; line-height:40px; font-size:28px;}
+.intro-layer .intro-box .i-flip {height:42px;}
+.intro-layer .intro-box .i-flip li {height:42px; line-height:42px; font-size:28px;}
 }
 
 @media (max-width:320px) {
