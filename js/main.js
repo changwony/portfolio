@@ -22,7 +22,10 @@ function introAni(){
 						});
 						setTimeout(function(){
 							$('.intro-layer').removeClass('on');
-							$('body').removeClass('page-loading').addClass('page-complete');
+							$('body').delay(2500).queue(function(next) {
+								$(this).removeClass('page-loading').addClass('page-complete');
+								next();
+							});
 						},filpSum2 + 1000);
 					}
 				},filpSpeed*filpIndex);
