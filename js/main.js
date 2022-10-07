@@ -35,10 +35,46 @@ function introAni(){
 	});
 }
 $(function(){
+
 	var introLayerObj = $('.intro-layer');
 	if (introLayerObj.length) {
 		introAni();
 	}
+
+	gsap.utils.toArray('.about-area').forEach(function(section){
+
+		var aboutDim = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.vod-coding',
+				start: 'top bottom',
+				end: 'top',
+				scrub: 0.2,
+			},
+			defaults: {ease: 'none'}
+		});
+		aboutDim.fromTo(section.querySelector('.v-dim'), {opacity: 1}, {opacity: 0}, 0)
+		.fromTo(section.querySelector('.about-text'), {opacity: 0, top: '30%'}, {opacity: 1, top: '0%'}, 0);
+
+		var aboutArea = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.about-area',
+				start: 'top',
+				end: '+=300%',
+				scrub: 0.2,
+				pin: true,
+				toggleClass: 'active'
+				//anticipatePin: 1
+			},
+			defaults: {ease: 'none'}
+		});
+		aboutArea.fromTo(section.querySelector('.about-slogan'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 0.3)
+		.fromTo(section.querySelector('.m-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, .8)
+		.fromTo(section.querySelector('.m-txt'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 1.6)
+		.fromTo(section.querySelector('.s-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, 2.1)
+		.fromTo(section.querySelector('.s-txt'), {opacity:1}, {opacity:1}, 2.6);
+
+	});
+
 });
 $(window).load(function(){
 	
