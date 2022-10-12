@@ -145,7 +145,7 @@ body.navOn {overflow-y:hidden;}
 .intro-layer {opacity:1; visibility:visible; position:fixed; top:0; left:0; width:100%; height:100%; background-color:transparent; z-index:10000; /* transform:translateX(101%) rotate(0.0001deg); */ transition:all 1.3s cubic-bezier(0.23, 1, 0.38, 1); overflow:hidden;}
 .page-complete .intro-layer {display:none;}
 .intro-layer.on {opacity:1; visibility:visible; transform:translateX(0);}
-.intro-layer .logo-svg {position:absolute; top:50%; left:50%; width:auto; height:3000%; background:#fff; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%); z-index:1; transition:all 2.5s ease;}
+.intro-layer .logo-svg {position:absolute; top:50%; left:50%; width:auto; height:3000%; background:#fff; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%); z-index:1; transition:all 2s ease;}
 .intro-layer.flip-off .logo-svg {background:transparent; transition-delay:.3s;}
 .intro-layer.on .logo-svg {height:130%;}
 .intro-layer .intro-box {position:absolute; top:48%; left:50%; width:100%; padding:10%; text-align:center; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%); z-index:2; transition:all 1s cubic-bezier(0.23, 1, 0.38, 1);}
@@ -180,16 +180,51 @@ body.navOn {overflow-y:hidden;}
 #header {position:fixed; top:0; left:0; width:100%;}
 
 /* main-visual */
-.main-visual {height:2000px; background-color:#eee;}
+.main-visual {background-color:#000;}
+.main-visual .main-intro {position:relative; height:calc(100vh); overflow:hidden;}
+.main-visual .main-intro .m-title {position:absolute; top:50%; left:50%; text-align:center; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
+.main-visual .main-intro .m-title .t-sec {mix-blend-mode:difference; overflow:hidden;}
+.main-visual .main-intro .m-title .t-sec span {display:block; color:#fff; letter-spacing:-0.01em; line-height:130%; white-space:nowrap; transform:translateY(110%); transition:all 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.main-visual .main-intro .m-title .t-sec:first-child span {font-size:10vw;}
+.main-visual .main-intro .m-title .t-sec:last-child span {font-size:10vw; transition-delay:0.2s;}
+.page-complete .main-visual .main-intro .m-title .t-sec span {transform:translateY(0);}
+.main-visual .main-story {display:flex; padding-top:10%; padding-bottom:10%;}
+.main-visual .main-story .about-photo {width:48%;}
+.main-visual .main-story .about-photo .p-thumb {position:relative; display:block; overflow:hidden;}
+.main-visual .main-story .about-photo .p-thumb:before {content:""; display:block; padding-top:100%;}
+.main-visual .main-story .about-photo .p-thumb img {position:absolute; top:50%; left:50%; width:100%; height:auto; -webkit-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%);}
+.main-visual .main-story .about-me {width:52%; padding:2% 5%;}
+.main-visual .main-story .about-me p {margin-bottom:5%; color:#fff; font-size:2vw; font-weight:300; font-family:'Noto Sans KR'; line-height:160%; letter-spacing:-0.024em;}
+.main-visual .main-story .about-me p:first-child {color:#303030; font-size:5.2vw; font-weight:600; line-height:120%;}
+.main-visual .main-story .about-me p:last-child {margin-bottom:0;}
+
+@media (max-width:767px) {
+.main-visual .main-story {display:block;}
+.main-visual .main-story .about-photo {width:100%;}
+
+.main-visual .main-story .about-me {width:100%; padding:5% 5%;}
+.main-visual .main-story .about-me p {font-size:4vw;}
+.main-visual .main-story .about-me p:first-child {font-size:10vw;}
+}
+
+/* project-area */
+.project-area {position:relative; overflow:hidden;}
+.project-area .project-list {display:flex; width:500%; height:calc(100vh);}
+.project-area .project-list .project-sec {width:100%; height:100%;}
+.project-area .project-list .project-sec:nth-child(1) {background-color:orange;}
+.project-area .project-list .project-sec:nth-child(2) {background-color:red;}
+.project-area .project-list .project-sec:nth-child(3) {background-color:green;}
+.project-area .project-list .project-sec:nth-child(4) {background-color:blue}
+.project-area .project-list .project-sec:nth-child(5) {background-color:black}
 
 /* about-area */
 .about-area {position:relative; min-height:calc(100vh + 0px); background-color:#000; overflow:hidden;}
 .about-area .about-text {position:absolute; top:0; left:0; width:100%; height:100%;}
-.about-area .about-text p {position:absolute; top:50%; left:50%; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
-.about-area .about-text .about-slogan {opacity:0; color:#fff; font-size:6vw; font-weight:800; text-align:center; white-space:nowrap; line-height:100%;}
-.about-area .about-text .m-txt {opacity:0; color:#fff; font-size:5vw; font-weight:800; text-align:center; white-space:nowrap; line-height:100%; letter-spacing:-0.024em;}
-.about-area .about-text .s-txt {opacity:0; color:#fff; font-size:2vw; font-weight:400; text-align:center; line-height:140%; letter-spacing:-0.024em;}
+.about-area .about-text p {opacity:0; position:absolute; top:50%; left:50%; color:#fff; text-align:center; letter-spacing:-0.024em; line-height:140%; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
+.about-area .about-text .about-slogan {font-size:4vw; font-weight:800;}
+.about-area .about-text .m-txt {font-size:4vw; font-weight:800;}
+.about-area .about-text .s-txt {font-size:2vw; font-weight:400;}
 .about-area .vod-coding {position:absolute; top:0; left:0; width:100%; height:100%; }
 .about-area .vod-coding:after {content:""; display:block; position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, .4);}
 .about-area .vod-coding video {width:100%; height:100%; object-fit:cover;}
-.about-area .vod-coding .v-dim {position:absolute; top:0; left:0; width:100%; height:100%; background-color:#000;}
+.about-area .vod-coding .v-dim {opacity:0; position:absolute; top:0; left:0; width:100%; height:100%; background-color:#000; transition:all 1.3s cubic-bezier(0.23, 1, 0.38, 1);}

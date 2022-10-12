@@ -22,7 +22,7 @@ function introAni(){
 						});
 						setTimeout(function(){
 							$('.intro-layer').removeClass('on');
-							$('body').delay(2500).queue(function(next) {
+							$('body').delay(2000).queue(function(next) {
 								$(this).removeClass('page-loading').addClass('page-complete');
 								next();
 							});
@@ -41,26 +41,80 @@ $(function(){
 		introAni();
 	}
 
-	gsap.utils.toArray('.about-area').forEach(function(section){
+	gsap.utils.toArray('.main-visual').forEach(function(section){
 
+		var aboutArea = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.main-intro',
+				start: 'top',
+				end: 'bottom',
+				scrub: 1
+			},
+			defaults: {ease: 'none'}
+		});
+		aboutArea.fromTo(section.querySelector('.m-title .t-sec.nht1'), {xPercent: 0}, {xPercent: 100}, 0)
+		.fromTo(section.querySelector('.m-title .t-sec.nht2'), {xPercent: 0}, {xPercent: -100}, 0);
+
+		var aboutArea = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.main-story',
+				start: 'top bottom',
+				end: 'top',
+				scrub: 1
+			},
+			defaults: {ease: 'none'}
+		});
+		aboutArea.fromTo(section.querySelector('.about-photo'), {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0}, 0)
+		.fromTo(section.querySelector('.about-me'), {opacity:0, yPercent: -20}, {opacity:1, yPercent: 0}, 0);
+
+
+	});
+
+	gsap.utils.toArray('.project-area').forEach(function(section){
+		
+		var PLtotal = 0;
+		var PLwidth = $('.project-area').outerWidth();
+        $('.project-list').each(function(index, item){
+            PLtotal += Number($(this).outerWidth());
+			PLsum = PLtotal - PLwidth;
+        });
+		var aboutArea = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.project-list',
+				start: 'top',
+				end: '+=200%',
+				scrub: 1,
+				pin: true,
+				anticipatePin: 1
+			},
+			defaults: {ease: 'none'}
+		});
+		aboutArea.fromTo(section.querySelector('.project-list'), {x: 0}, {x: -PLsum}, 0);
+		
+	});
+
+	gsap.utils.toArray('.about-area').forEach(function(section){
+		
+		/*
 		var aboutDim = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.vod-coding',
 				start: 'top bottom',
 				end: 'top',
-				scrub: 0.2,
+				scrub: 0.5,
 			},
 			defaults: {ease: 'none'}
 		});
 		aboutDim.fromTo(section.querySelector('.v-dim'), {opacity: 1}, {opacity: 0}, 0)
 		.fromTo(section.querySelector('.about-text'), {opacity: 0, top: '30%'}, {opacity: 1, top: '0%'}, 0);
+		*/
 
 		var aboutArea = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.about-area',
 				start: 'top',
-				end: '+=300%',
-				scrub: 0.2,
+				end: '+=250%',
+				scrub: .5,
 				pin: true,
 				toggleClass: 'active'
 				//anticipatePin: 1
@@ -77,5 +131,7 @@ $(function(){
 
 });
 $(window).load(function(){
-	
+	setTimeout (function () {
+		scrollTo(0,0);
+	},100);
 });
