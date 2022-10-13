@@ -1,3 +1,4 @@
+var windowResizeTimer = null;
 function introAni(){
 	$('body').addClass('page-loading');
 	$('.i-tit').delay(100).queue(function(next) {
@@ -41,9 +42,9 @@ $(function(){
 		introAni();
 	}
 
-	gsap.utils.toArray('.main-visual').forEach(function(section){
+	gsap.utils.toArray('#wrap').forEach(function(section){
 
-		var aboutArea = gsap.timeline({
+		var mainIntro = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.main-intro',
 				start: 'top',
@@ -52,10 +53,10 @@ $(function(){
 			},
 			defaults: {ease: 'none'}
 		});
-		aboutArea.fromTo(section.querySelector('.m-title .t-sec.nht1'), {xPercent: 0}, {xPercent: 100}, 0)
+		mainIntro.fromTo(section.querySelector('.m-title .t-sec.nht1'), {xPercent: 0}, {xPercent: 100}, 0)
 		.fromTo(section.querySelector('.m-title .t-sec.nht2'), {xPercent: 0}, {xPercent: -100}, 0);
 
-		var aboutArea = gsap.timeline({
+		var mainStory = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.main-story',
 				start: 'top bottom',
@@ -64,21 +65,25 @@ $(function(){
 			},
 			defaults: {ease: 'none'}
 		});
-		aboutArea.fromTo(section.querySelector('.about-photo'), {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0}, 0)
+		mainStory.fromTo(section.querySelector('.about-photo'), {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0}, 0)
 		.fromTo(section.querySelector('.about-me'), {opacity:0, yPercent: -20}, {opacity:1, yPercent: 0}, 0);
 
-
-	});
-
-	gsap.utils.toArray('.project-area').forEach(function(section){
-		
+		var projectArea = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.project-area',
+				start: 'top 50%',
+				scrub: 1,
+				toggleClass: 'active'
+			},
+			defaults: {ease: 'none'}
+		});
 		var PLtotal = 0;
 		var PLwidth = $('.project-area').outerWidth();
         $('.project-list').each(function(index, item){
             PLtotal += Number($(this).outerWidth());
 			PLsum = PLtotal - PLwidth;
         });
-		var aboutArea = gsap.timeline({
+		var projectList = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.project-list',
 				start: 'top',
@@ -89,12 +94,8 @@ $(function(){
 			},
 			defaults: {ease: 'none'}
 		});
-		aboutArea.fromTo(section.querySelector('.project-list'), {x: 0}, {x: -PLsum}, 0);
-		
-	});
+		projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-55%'}, 0); //PLsum 원래 이값
 
-	gsap.utils.toArray('.about-area').forEach(function(section){
-		
 		/*
 		var aboutDim = gsap.timeline({
 			scrollTrigger: {
@@ -133,5 +134,14 @@ $(function(){
 $(window).load(function(){
 	setTimeout (function () {
 		scrollTo(0,0);
+		ScrollTrigger.refresh();
 	},100);
+});
+
+$(window).on('resize', function(){
+	clearTimeout(windowResizeTimer);
+	windowResizeTimer = setTimeout(function(){
+		ScrollTrigger.refresh();
+		console.log(1);
+	}, 1000);
 });
