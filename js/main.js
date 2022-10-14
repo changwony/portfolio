@@ -42,106 +42,115 @@ $(function(){
 		introAni();
 	}
 
+	gsap.registerPlugin(ScrollTrigger);
 	gsap.utils.toArray('#wrap').forEach(function(section){
+		ScrollTrigger.matchMedia({
+			'(min-width: 1024px)': function() {
+				var PLtotal = 0;
+				var PLwidth = $('.project-area').outerWidth();
+				$('.project-list').each(function(index, item){
+					PLtotal += Number($(this).outerWidth());
+					PLsum = PLtotal - PLwidth;
+				});
+				var projectList = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.project-list',
+						start: 'top',
+						end: '+=200%',
+						scrub: 1,
+						pin: true,
+						anticipatePin: 1
+					},
+					defaults: {ease: 'none'}
+				});
+				projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-63%'}, 0); //PLsum 원래 이값
+			}, 
+			'(max-width: 1023px)': function() {
+				console.log(2);
+			}, 
+			'all': function() {
+				var mainIntro = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.main-intro',
+						start: 'top',
+						end: 'bottom',
+						scrub: 1
+					},
+					defaults: {ease: 'none'}
+				});
+				mainIntro.fromTo(section.querySelector('.m-title .t-sec.nht1'), {xPercent: 0}, {xPercent: 100}, 0)
+				.fromTo(section.querySelector('.m-title .t-sec.nht2'), {xPercent: 0}, {xPercent: -100}, 0);
 
-		var mainIntro = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.main-intro',
-				start: 'top',
-				end: 'bottom',
-				scrub: 1
-			},
-			defaults: {ease: 'none'}
-		});
-		mainIntro.fromTo(section.querySelector('.m-title .t-sec.nht1'), {xPercent: 0}, {xPercent: 100}, 0)
-		.fromTo(section.querySelector('.m-title .t-sec.nht2'), {xPercent: 0}, {xPercent: -100}, 0);
+				var mainStory = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.main-story',
+						start: 'top bottom',
+						end: 'top',
+						scrub: 1
+					},
+					defaults: {ease: 'none'}
+				});
+				mainStory.fromTo(section.querySelector('.about-photo'), {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0}, 0)
+				.fromTo(section.querySelector('.about-me'), {opacity:0, yPercent: -20}, {opacity:1, yPercent: 0}, 0);
 
-		var mainStory = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.main-story',
-				start: 'top bottom',
-				end: 'top',
-				scrub: 1
-			},
-			defaults: {ease: 'none'}
-		});
-		mainStory.fromTo(section.querySelector('.about-photo'), {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0}, 0)
-		.fromTo(section.querySelector('.about-me'), {opacity:0, yPercent: -20}, {opacity:1, yPercent: 0}, 0);
+				var projectArea = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.project-area',
+						start: 'top 50%',
+						scrub: 1,
+						toggleClass: 'active'
+					},
+					defaults: {ease: 'none'}
+				});
 
-		var projectArea = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.project-area',
-				start: 'top 50%',
-				scrub: 1,
-				toggleClass: 'active'
-			},
-			defaults: {ease: 'none'}
-		});
-		var PLtotal = 0;
-		var PLwidth = $('.project-area').outerWidth();
-        $('.project-list').each(function(index, item){
-            PLtotal += Number($(this).outerWidth());
-			PLsum = PLtotal - PLwidth;
-        });
-		var projectList = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.project-list',
-				start: 'top',
-				end: '+=200%',
-				scrub: 1,
-				pin: true,
-				anticipatePin: 1
-			},
-			defaults: {ease: 'none'}
-		});
-		projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-55%'}, 0); //PLsum 원래 이값
+				/*
+				var aboutDim = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.vod-coding',
+						start: 'top bottom',
+						end: 'top',
+						scrub: 0.5,
+					},
+					defaults: {ease: 'none'}
+				});
+				aboutDim.fromTo(section.querySelector('.v-dim'), {opacity: 1}, {opacity: 0}, 0)
+				.fromTo(section.querySelector('.about-text'), {opacity: 0, top: '30%'}, {opacity: 1, top: '0%'}, 0);
+				*/
 
-		/*
-		var aboutDim = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.vod-coding',
-				start: 'top bottom',
-				end: 'top',
-				scrub: 0.5,
-			},
-			defaults: {ease: 'none'}
-		});
-		aboutDim.fromTo(section.querySelector('.v-dim'), {opacity: 1}, {opacity: 0}, 0)
-		.fromTo(section.querySelector('.about-text'), {opacity: 0, top: '30%'}, {opacity: 1, top: '0%'}, 0);
-		*/
+				var aboutArea = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.about-area',
+						start: 'top',
+						end: '+=250%',
+						scrub: .5,
+						pin: true,
+						toggleClass: 'active'
+						//anticipatePin: 1
+					},
+					defaults: {ease: 'none'}
+				});
+				aboutArea.fromTo(section.querySelector('.about-slogan'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 0.3)
+				.fromTo(section.querySelector('.m-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, .8)
+				.fromTo(section.querySelector('.m-txt'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 1.6)
+				.fromTo(section.querySelector('.s-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, 2.1)
+				.fromTo(section.querySelector('.s-txt'), {opacity:1}, {opacity:1}, 2.6);
 
-		var aboutArea = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.about-area',
-				start: 'top',
-				end: '+=250%',
-				scrub: .5,
-				pin: true,
-				toggleClass: 'active'
-				//anticipatePin: 1
-			},
-			defaults: {ease: 'none'}
+				ScrollTrigger.refresh();
+			}
 		});
-		aboutArea.fromTo(section.querySelector('.about-slogan'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 0.3)
-		.fromTo(section.querySelector('.m-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, .8)
-		.fromTo(section.querySelector('.m-txt'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 1.6)
-		.fromTo(section.querySelector('.s-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, 2.1)
-		.fromTo(section.querySelector('.s-txt'), {opacity:1}, {opacity:1}, 2.6);
 
 	});
 
 });
 $(window).load(function(){
 	setTimeout (function () {
-		scrollTo(0,0);
-		ScrollTrigger.refresh();
+		scrollTo(0,0);	
 	},100);
 });
 
 $(window).on('resize', function(){
 	clearTimeout(windowResizeTimer);
 	windowResizeTimer = setTimeout(function(){
-		ScrollTrigger.refresh();
-		console.log(1);
+		//ScrollTrigger.refresh();
 	}, 1000);
 });

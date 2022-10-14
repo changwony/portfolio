@@ -210,36 +210,50 @@ body.navOn {overflow-y:hidden;}
 .project-area {position:relative; overflow:hidden; background-color:#000; transition:background 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .project-area.active {background-color:#fff;}
 .project-area .pr-title {padding:8% 5% 0 5%;}
-.project-area .pr-title .t-sec {overflow:hidden;}
-.project-area .pr-title .t-sec span {display:block; color:#000; font-size:8vw; font-weight:800; line-height:100%; letter-spacing:-0.01em; transform:translateY(110%); transition:transform 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.project-area .pr-title .t-sec {position:relative; overflow:hidden;}
+.project-area .pr-title .t-sec span {display:block; color:#000; font-size:9vw; font-weight:800; line-height:100%; letter-spacing:-0.01em; transform:translateY(110%); transition:transform 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .project-area.active .pr-title .t-sec span {transform:translateY(0);}
-.project-area .project-list {display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; flex-wrap:nowrap; width:225%; height:calc(100vh); padding:5% 3%;}
-.project-area .project-list .project-sec {width:45%; padding-right:1%; padding-left:1%;}
-/*
-.project-area .project-list .project-sec:nth-child(1) {background-color:orange;}
-.project-area .project-list .project-sec:nth-child(2) {background-color:red;}
-.project-area .project-list .project-sec:nth-child(3) {background-color:green;}
-.project-area .project-list .project-sec:nth-child(4) {background-color:blue}
-.project-area .project-list .project-sec:nth-child(5) {background-color:black}
-*/
-.project-area .project-list .project-sec .p-box {opacity:0; position:relative; display:block; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
-.project-area.active .project-list .project-sec .p-box {opacity:1;}
+.project-area .project-list {display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; flex-wrap:nowrap; width:270%; height:calc(100vh); padding:6% 3%;}
+.project-area .project-list .project-sec {opacity:0; width:45%; padding-right:1%; padding-left:1%; text-align:center; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.project-area.active .project-list .project-sec {opacity:1;}
+.project-area .project-list .project-sec .p-box {position:relative; display:block; text-align:left;}
 .project-area .project-list .project-sec .p-box:hover {text-decoration:none;}
 .project-area .project-list .project-sec .p-box .p-thumb {position:relative; display:block; overflow:hidden;}
 .project-area .project-list .project-sec .p-box .p-thumb:before {content:""; display:block; padding-top:62%;}
-.project-area .project-list .project-sec .p-box .p-thumb .p-img {display:block; position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%; overflow:hidden; transition:transform .15s ease-out;}
+.project-area .project-list .project-sec .p-box .p-thumb .p-img {display:block; position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%; overflow:hidden; transition:transform .3s ease-out;}
 .project-area .project-list .project-sec .p-box .p-thumb .p-img img {position:absolute; top:50%; left:50%; width:auto; height:100%; -webkit-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%);}
-.project-area .project-list .project-sec .p-box .p-info {display:block; padding:50px 10px 25px 10px;}
+.project-area .project-list .project-sec .p-box .p-info {display:block; padding:6% 3%;}
 .project-area .project-list .project-sec .p-box .p-info .p-kind {display:block; margin-bottom:3%; color:#333; font-size:1.2vw; font-weight:600; line-height:160%; font-family:'Montserrat';}
 .project-area .project-list .project-sec .p-box .p-info .p-kind em {position:relative; display:inline-block; padding-right:15px; padding-left:15px; vertical-align:middle;}
 .project-area .project-list .project-sec .p-box .p-info .p-kind em:first-child {padding-left:0;}
 .project-area .project-list .project-sec .p-box .p-info .p-kind em:last-child {padding-right:0;}
 .project-area .project-list .project-sec .p-box .p-info .p-kind em:before {content:""; display:block; position:absolute; top:50%; left:-1px; width:1px; height:60%; margin-top:-6%; background-color:#aaa;}
 .project-area .project-list .project-sec .p-box .p-info .p-kind em:first-child:before {display:none;}
-.project-area .project-list .project-sec .p-box .p-info .p-tit {display:block; color:#000; font-size:2vw; font-weight:600; line-height:160%; letter-spacing:-0.024em; word-break:break-all; font-family:'Noto Sans KR';}
+.project-area .project-list .project-sec .p-box .p-info .p-tit {display:block; color:#000; font-size:2vw; font-weight:600; line-height:150%; letter-spacing:-0.024em; word-break:break-all; font-family:'Noto Sans KR';}
+.project-area .project-list .project-sec .btn-pr-more {display:inline-block; margin:5%; vertical-align:middle;}
+.project-area .project-list .project-sec .btn-pr-more:hover {text-decoration:none;}
+.project-area .project-list .project-sec .btn-pr-more span {-webkit-text-stroke:2px #000; color:#fff; font-size:8vw; font-weight:800; letter-spacing:-0.03em; transition:color .3s ease-out;}
+
+@media (min-width:1024px) {
+.project-area .project-list .project-sec .p-box:hover .p-thumb .p-img {transform:scale(1.08) rotate(0.1deg);}
+.project-area .project-list .project-sec .btn-pr-more span:hover {color:#000;}
+}
+
+@media (max-width:1023px) {
+.project-area .project-list {-webkit-box-align:start; -webkit-align-items:start; align-items:start; flex-wrap:wrap; width:100%; height:auto;}
+.project-area .project-list .project-sec {width:50%; padding-bottom:3%;}
+.project-area .project-list .project-sec.more {width:100%;}
+}
 
 @media (max-width:767px) {
-
+.project-area .pr-title {padding:12% 5% 0 5%;}
+.project-area .pr-title .t-sec span {font-size:13vw; letter-spacing:-0.03em;}
+.project-area .project-list {padding:8% 3%;}
+.project-area .project-list .project-sec {width:100%;}
+.project-area .project-list .project-sec .p-box .p-info .p-kind {font-size:3vw;}
+.project-area .project-list .project-sec .p-box .p-info .p-kind em {padding-right:10px; padding-left:10px;}
+.project-area .project-list .project-sec .p-box .p-info .p-tit {font-size:5vw;}
+.project-area .project-list .project-sec .btn-pr-more span {-webkit-text-stroke:1px #000; }
 }
 
 
