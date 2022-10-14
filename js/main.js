@@ -66,8 +66,7 @@ $(function(){
 				projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-68%'}, 0); //PLsum 원래 이값
 			}, 
 			'(max-width: 1023px)': function() {
-				console.log(2);
-			}, 
+			},
 			'all': function() {
 				var mainIntro = gsap.timeline({
 					scrollTrigger: {
