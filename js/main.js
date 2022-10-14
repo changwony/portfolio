@@ -63,7 +63,7 @@ $(function(){
 					},
 					defaults: {ease: 'none'}
 				});
-				projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-63%'}, 0); //PLsum 원래 이값
+				projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-68%'}, 0); //PLsum 원래 이값
 			}, 
 			'(max-width: 1023px)': function() {
 				console.log(2);
@@ -86,17 +86,18 @@ $(function(){
 						trigger: '.main-story',
 						start: 'top bottom',
 						end: 'top',
-						scrub: 1
+						scrub: 0.5
 					},
 					defaults: {ease: 'none'}
 				});
-				mainStory.fromTo(section.querySelector('.about-photo'), {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0}, 0)
-				.fromTo(section.querySelector('.about-me'), {opacity:0, yPercent: -20}, {opacity:1, yPercent: 0}, 0);
+				mainStory.fromTo(section.querySelector('.about-photo'), {opacity: 0, yPercent: -20}, {opacity: 1, yPercent: 0}, 0)
+				.fromTo(section.querySelector('.about-photo .p-thumb img'), {top: '10%'}, {top: '45%'}, 0)
+				.fromTo(section.querySelector('.about-me'), {opacity:0, yPercent: 50}, {opacity:1, yPercent: 0}, 0);
 
 				var projectArea = gsap.timeline({
 					scrollTrigger: {
 						trigger: '.project-area',
-						start: 'top 50%',
+						start: 'top 65%',
 						scrub: 1,
 						toggleClass: 'active'
 					},

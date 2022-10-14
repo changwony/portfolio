@@ -201,9 +201,9 @@ body.navOn {overflow-y:hidden;}
 @media (max-width:767px) {
 .main-visual .main-story {display:block;}
 .main-visual .main-story .about-photo {width:100%;}
-.main-visual .main-story .about-me {width:100%; padding:5% 5%;}
-.main-visual .main-story .about-me p {font-size:4vw;}
-.main-visual .main-story .about-me p:first-child {font-size:10vw;}
+.main-visual .main-story .about-me {width:100%; padding:8% 5% 5% 5%;}
+.main-visual .main-story .about-me p {font-size:4.5vw;}
+.main-visual .main-story .about-me p:first-child {font-size:11vw;}
 }
 
 /* project-area */
@@ -213,7 +213,7 @@ body.navOn {overflow-y:hidden;}
 .project-area .pr-title .t-sec {position:relative; overflow:hidden;}
 .project-area .pr-title .t-sec span {display:block; color:#000; font-size:9vw; font-weight:800; line-height:100%; letter-spacing:-0.01em; transform:translateY(110%); transition:transform 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .project-area.active .pr-title .t-sec span {transform:translateY(0);}
-.project-area .project-list {display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; flex-wrap:nowrap; width:270%; height:calc(100vh); padding:6% 3%;}
+.project-area .project-list {display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; flex-wrap:nowrap; width:315%; height:calc(100vh); padding:6% 3%;}
 .project-area .project-list .project-sec {opacity:0; width:45%; padding-right:1%; padding-left:1%; text-align:center; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .project-area.active .project-list .project-sec {opacity:1;}
 .project-area .project-list .project-sec .p-box {position:relative; display:block; text-align:left;}
@@ -232,7 +232,7 @@ body.navOn {overflow-y:hidden;}
 .project-area .project-list .project-sec .p-box .p-info .p-tit {display:block; color:#000; font-size:2vw; font-weight:600; line-height:150%; letter-spacing:-0.024em; word-break:break-all; font-family:'Noto Sans KR';}
 .project-area .project-list .project-sec .btn-pr-more {display:inline-block; margin:5%; vertical-align:middle;}
 .project-area .project-list .project-sec .btn-pr-more:hover {text-decoration:none;}
-.project-area .project-list .project-sec .btn-pr-more span {-webkit-text-stroke:2px #000; color:#fff; font-size:8vw; font-weight:800; letter-spacing:-0.03em; transition:color .3s ease-out;}
+.project-area .project-list .project-sec .btn-pr-more span {-webkit-text-stroke:2px #000; color:#fff; font-size:8vw; font-weight:800; line-height:100%; letter-spacing:-0.03em; transition:color .3s ease-out;}
 
 @media (min-width:1024px) {
 .project-area .project-list .project-sec .p-box:hover .p-thumb .p-img {transform:scale(1.08) rotate(0.1deg);}
