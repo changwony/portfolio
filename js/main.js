@@ -156,7 +156,7 @@ $(window).on('resize', function(){
 });
 
 $(window).scroll(function(){
-	if($(window).scrollTop() >= 1) {
+	if($(window).scrollTop() >= 100) {
 		$('.scroll-down').addClass('hidden');
 	}else{
 		$('.scroll-down').removeClass('hidden');
