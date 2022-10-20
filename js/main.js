@@ -132,8 +132,8 @@ $(function(){
 				aboutArea.fromTo(section.querySelector('.about-slogan'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 0.3)
 				.fromTo(section.querySelector('.m-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, .8)
 				.fromTo(section.querySelector('.m-txt'), {opacity: 1, top: '50%'}, {opacity: 0, top: '30%'}, 1.6)
-				.fromTo(section.querySelector('.s-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, 2.1)
-				.fromTo(section.querySelector('.s-txt'), {opacity:1}, {opacity:1}, 2.6);
+				.fromTo(section.querySelector('.about-text .s-txt'), {opacity: 0, top: '70%'}, {opacity: 1, top: '50%'}, 2.1)
+				.fromTo(section.querySelector('.about-text .s-txt'), {opacity:1}, {opacity:1}, 2.6);
 
 				ScrollTrigger.refresh();
 			}
@@ -153,4 +153,12 @@ $(window).on('resize', function(){
 	windowResizeTimer = setTimeout(function(){
 		//ScrollTrigger.refresh();
 	}, 1000);
+});
+
+$(window).scroll(function(){
+	if($(window).scrollTop() >= 1) {
+		$('.scroll-down').addClass('hidden');
+	}else{
+		$('.scroll-down').removeClass('hidden');
+	}
 });
