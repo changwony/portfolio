@@ -63,7 +63,7 @@ $(function(){
 					},
 					defaults: {ease: 'none'}
 				});
-				projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-68%'}, 0); //PLsum 원래 이값
+				projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-68.5%'}, 0); //PLsum 원래 이값
 			}, 
 			'(max-width: 1023px)': function() {
 			},
@@ -96,6 +96,16 @@ $(function(){
 				var projectArea = gsap.timeline({
 					scrollTrigger: {
 						trigger: '.project-area',
+						start: 'top 65%',
+						scrub: 1,
+						toggleClass: 'active'
+					},
+					defaults: {ease: 'none'}
+				});
+
+				var projectArea = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.contact-area',
 						start: 'top 65%',
 						scrub: 1,
 						toggleClass: 'active'

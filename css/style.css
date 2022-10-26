@@ -129,11 +129,13 @@ body.navOn {overflow-y:hidden;}
 .page-complete #header {opacity:1;}
 #container {position:relative;}
 #contents {height:2000px; background-color:#f5f5f5;}
-.cursor {position:fixed; top:0; left:0; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; justify-content:center; width:130px; height:130px; font-family:'Noto Sans KR'; border-radius:50%; background-color:#9bf50b; transform:translate(-50%, -50%); transition:width .25s ease-out, height .25s ease-out, background .25s ease-out; z-index:10000; pointer-events:none; mix-blend-mode:difference;}
+.cursor {position:fixed; top:0; left:0; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; justify-content:center; width:140px; height:140px; font-family:'Noto Sans KR'; border-radius:50%; background-color:#9bf50b; transform:translate(-50%, -50%); transition:width .25s ease-out, height .25s ease-out, background .25s ease-out; z-index:10000; pointer-events:none; mix-blend-mode:difference;}
 .page-complete .cursor {width:45px; height:45px;}
 .cursor.link-basic {width:130px; height:130px; background-color:#770bf5;}
 .cursor.link-project {width:130px; height:130px; background-color:#fff; mix-blend-mode:normal;}
 .cursor.link-project:after {content:"VIEW ↗"; display:block; color:#000; font-size:18px; font-weight:800; line-height:100%; white-space:nowrap;}
+
+.cursor.text-zoom {width:150px; height:150px;}
 
 @media (max-width:1023px) {
 body, a {cursor:auto;}
@@ -272,7 +274,7 @@ a:-webkit-any-link {cursor:pointer;}
 @media (max-width:1023px) {
 .project-area .project-list {-webkit-box-align:start; -webkit-align-items:start; align-items:start; flex-wrap:wrap; width:100%; height:auto;}
 .project-area .project-list .project-sec {width:50%; padding-bottom:3%;}
-.project-area .project-list .project-sec.more {width:100%;}
+.project-area .project-list .project-sec.more {width:100%; padding-bottom:0;}
 }
 
 @media (max-width:767px) {
@@ -298,3 +300,31 @@ a:-webkit-any-link {cursor:pointer;}
 .about-area .vod-coding:after {content:""; display:block; position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, .4);}
 .about-area .vod-coding video {width:100%; height:100%; object-fit:cover;}
 .about-area .vod-coding .v-dim {opacity:0; position:absolute; top:0; left:0; width:100%; height:100%; background-color:#000; transition:all 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+
+/* contact-area */
+.contact-area {position:relative; overflow:hidden; padding:8% 5%; background-color:#fff; transition:background 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.contact-area.active {background-color:#000;}
+.contact-area .ct-title {margin-bottom:5%;}
+.contact-area .ct-title .t-sec {position:relative; overflow:hidden;}
+.contact-area .ct-title .t-sec span {display:block; color:#fff; font-size:9vw; font-weight:800; line-height:100%; letter-spacing:-0.01em; transform:translateY(110%); transition:transform 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.contact-area.active .ct-title .t-sec span {transform:translateY(0);}
+.contact-area .ct-info {opacity:0; padding-right:1%; padding-left:1%; overflow:hidden; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.contact-area.active .ct-info {opacity:1; transition-delay:.5s;}
+.contact-area .ct-info dl {position:relative; margin-top:3%;}
+.contact-area .ct-info dl:first-child {margin-top:0;}
+.contact-area .ct-info dl dt {margin-bottom:5px; color:#fff; font-size:1vw; font-weight:300; line-height:140%; letter-spacing:-0.01em;}
+.contact-area .ct-info dl dd {color:#fff; font-size:2vw; font-weight:300; line-height:140%; letter-spacing:-0.01em;}
+
+@media (max-width:767px) {
+.contact-area {padding:15% 5%;}
+.contact-area .ct-title {margin-bottom:9%;}
+.contact-area .ct-title .t-sec span {font-size:13vw; letter-spacing:-0.03em;}
+.contact-area .ct-info dl {margin-top:7%;}
+.contact-area .ct-info dl dt {font-size:3vw;}
+.contact-area .ct-info dl dd {font-size:4vw;}
+}
+
+/* footer */
+#footer {padding:30px 30px; background-color:#000;}
+#footer .copy {color:#bcbcbc; font-size:.83vw; font-weight:300; line-height:140%; text-align:center;}
+#footer .noti {position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; color:transparent; overflow:hidden;}
