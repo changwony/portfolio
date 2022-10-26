@@ -308,23 +308,32 @@ a:-webkit-any-link {cursor:pointer;}
 .contact-area .ct-title .t-sec {position:relative; overflow:hidden;}
 .contact-area .ct-title .t-sec span {display:block; color:#fff; font-size:9vw; font-weight:800; line-height:100%; letter-spacing:-0.01em; transform:translateY(110%); transition:transform 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .contact-area.active .ct-title .t-sec span {transform:translateY(0);}
-.contact-area .ct-info {opacity:0; padding-right:1%; padding-left:1%; overflow:hidden; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.contact-area .ct-info {opacity:0; margin-bottom:4%; padding-right:1%; padding-left:1%; overflow:hidden; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .contact-area.active .ct-info {opacity:1; transition-delay:.5s;}
 .contact-area .ct-info dl {position:relative; margin-top:3%;}
 .contact-area .ct-info dl:first-child {margin-top:0;}
 .contact-area .ct-info dl dt {margin-bottom:5px; color:#fff; font-size:1vw; font-weight:300; line-height:140%; letter-spacing:-0.01em;}
-.contact-area .ct-info dl dd {color:#fff; font-size:2vw; font-weight:300; line-height:140%; letter-spacing:-0.01em;}
+.contact-area .ct-info dl dd, .contact-area .ct-info dl dd a {color:#fff; font-size:2vw; font-weight:300; line-height:140%; letter-spacing:-0.01em;}
+.contact-area .ct-btm {opacity:0; padding-right:1%; padding-left:1%; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.contact-area.active .ct-btm {opacity:1; transition-delay:.5s;}
+.contact-area .ct-btm .btn-contact {display:inline-block; padding:1.2% 3%; color:#fff; font-size:1.5vw; font-weight:300; line-height:140%; letter-spacing:-0.01em; border:1px solid #fff; border-radius:70px; vertical-align:middle;}
 
 @media (max-width:767px) {
 .contact-area {padding:15% 5%;}
-.contact-area .ct-title {margin-bottom:9%;}
+.contact-area .ct-title {margin-bottom:8%;}
 .contact-area .ct-title .t-sec span {font-size:13vw; letter-spacing:-0.03em;}
+.contact-area .ct-info {margin-bottom:9%;}
 .contact-area .ct-info dl {margin-top:7%;}
 .contact-area .ct-info dl dt {font-size:3vw;}
 .contact-area .ct-info dl dd {font-size:4vw;}
+.contact-area .ct-btm .btn-contact {padding:2.5% 5%; font-size:2.8vw;}
 }
 
 /* footer */
-#footer {padding:30px 30px; background-color:#000;}
+#footer {padding:30px 30px; background-color:#000; overflow:hidden;}
 #footer .copy {color:#bcbcbc; font-size:.83vw; font-weight:300; line-height:140%; text-align:center;}
 #footer .noti {position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; color:transparent; overflow:hidden;}
+
+@media (max-width:767px) {
+#footer .copy {font-size:2.8vw;}
+}
