@@ -48,6 +48,9 @@ $(function(){
 			'(min-width: 1024px)': function() {
 				var PLtotal = 0;
 				var PLwidth = $('.project-area').outerWidth();
+				var proxy = { skew: 0 },
+					skewSetter = gsap.quickSetter('.p-box', 'skewX', 'deg'),
+					clamp = gsap.utils.clamp(-20, 20);
 				$('.project-list').each(function(index, item){
 					PLtotal += Number($(this).outerWidth());
 					PLsum = PLtotal - PLwidth;
@@ -59,11 +62,20 @@ $(function(){
 						end: '+=200%',
 						scrub: 1,
 						pin: true,
-						anticipatePin: 1
+						anticipatePin: 1,
+						onUpdate: function(self){
+							var skew = clamp(self.getVelocity() / -300);
+							if (Math.abs(skew) > Math.abs(proxy.skew)) {
+								proxy.skew = skew;
+								gsap.to(proxy, {skew: 0, duration: 1.0, ease: 'power3', overwrite: true, onUpdate: function(){skewSetter(proxy.skew)}});
+							}
+						}
 					},
 					defaults: {ease: 'none'}
 				});
-				projectList.fromTo(section.querySelector('.project-list'), {x: 0}, {x: '-68.5%'}, 0); //PLsum 원래 이값
+				projectList.fromTo(section.querySelector('.project-list'), {x: 0, yPercent: -0, rotationX: 0, rotationY: 0, rotationZ: 0}, {x: '-68.5%', yPercent: 0, rotationX: 0, rotationY: 0, rotationZ: 0}, 0); //PLsum 원래 이값
+				gsap.set('.p-box', {transformOrigin: 'right center', force3D: true});
+
 			}, 
 			'(max-width: 1023px)': function() {
 			},
@@ -98,7 +110,10 @@ $(function(){
 						trigger: '.project-area',
 						start: 'top 65%',
 						scrub: 1,
-						toggleClass: 'active'
+						toggleClass: 'active',
+						onToggle: function(scrollTrigger){
+							scrollTrigger.refresh()
+						}
 					},
 					defaults: {ease: 'none'}
 				});
@@ -108,7 +123,10 @@ $(function(){
 						trigger: '.contact-area',
 						start: 'top 65%',
 						scrub: 1,
-						toggleClass: 'active'
+						toggleClass: 'active',
+						onToggle: function(scrollTrigger){
+							scrollTrigger.refresh()
+						}
 					},
 					defaults: {ease: 'none'}
 				});
