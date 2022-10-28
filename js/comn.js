@@ -2,7 +2,7 @@
 
 	var mouseCursor = document.querySelector('.cursor');
 	var projectLinks = document.querySelectorAll('.project-sec .p-box');
-	var basicLinks = document.querySelectorAll('.btn-pr-more');
+	var basicLinks = document.querySelectorAll('.btn-pr-more, .btn-contact');
 	var textZoom = document.querySelectorAll('.about-me p');
 	
 	window.addEventListener('scroll', cursor);

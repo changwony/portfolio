@@ -325,7 +325,7 @@ a:-webkit-any-link {cursor:pointer;}
 .contact-area .ct-info {margin-bottom:9%;}
 .contact-area .ct-info dl {margin-top:7%;}
 .contact-area .ct-info dl dt {font-size:3vw;}
-.contact-area .ct-info dl dd {font-size:4vw;}
+.contact-area .ct-info dl dd, .contact-area .ct-info dl dd a {font-size:4vw;}
 .contact-area .ct-btm .btn-contact {padding:2.5% 5%; font-size:2.8vw;}
 }
 
