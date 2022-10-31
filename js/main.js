@@ -42,6 +42,28 @@ $(function(){
 		introAni();
 	}
 
+	var mainWidth;
+	var mainHeight;
+
+	mainEffect();
+
+	function mainEffect(){
+		mainWidth = $('.main-intro').innerWidth();
+		mainHeight = $('.main-intro').innerHeight();
+		//mainWidth = window.innerWidth;
+		//mainHeight = window.innerHeight; 
+	}
+
+	var maxDegrees = 100;
+
+	window.onmousemove = function(evt) {
+		var mouseX = evt.pageX/mainWidth;
+		var mouseY = evt.pageY/mainHeight;
+		var yDegrees = (mouseX*maxDegrees)-0.5*maxDegrees;
+		var xDegrees = -0.5*((mouseY*maxDegrees)-0.5*maxDegrees);
+		document.getElementsByClassName('m-figure')[0].style.transform = 'rotateY('+yDegrees+'deg) rotateX('+xDegrees+'deg)';
+	}
+
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.utils.toArray('#wrap').forEach(function(section){
 		ScrollTrigger.matchMedia({
@@ -50,7 +72,7 @@ $(function(){
 				var PLwidth = $('.project-area').outerWidth();
 				var proxy = { skew: 0 },
 					skewSetter = gsap.quickSetter('.p-box', 'skewX', 'deg'),
-					clamp = gsap.utils.clamp(-20, 20);
+					clamp = gsap.utils.clamp(-20, 20); //동작 값
 				$('.project-list').each(function(index, item){
 					PLtotal += Number($(this).outerWidth());
 					PLsum = PLtotal - PLwidth;
@@ -62,7 +84,8 @@ $(function(){
 						end: '+=200%',
 						scrub: 1,
 						pin: true,
-						anticipatePin: 1,
+						anticipatePin: 1
+						/*
 						onUpdate: function(self){
 							var skew = clamp(self.getVelocity() / -300);
 							if (Math.abs(skew) > Math.abs(proxy.skew)) {
@@ -70,11 +93,12 @@ $(function(){
 								gsap.to(proxy, {skew: 0, duration: 1.0, ease: 'power3', overwrite: true, onUpdate: function(){skewSetter(proxy.skew)}});
 							}
 						}
+						*/
 					},
 					defaults: {ease: 'none'}
 				});
 				projectList.fromTo(section.querySelector('.project-list'), {x: 0, yPercent: -0, rotationX: 0, rotationY: 0, rotationZ: 0}, {x: '-68.5%', yPercent: 0, rotationX: 0, rotationY: 0, rotationZ: 0}, 0); //PLsum 원래 이값
-				gsap.set('.p-box', {transformOrigin: 'right center', force3D: true});
+				//gsap.set('.p-box', {transformOrigin: 'right center', force3D: true});
 
 			}, 
 			'(max-width: 1023px)': function() {

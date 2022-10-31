@@ -183,14 +183,23 @@ a:-webkit-any-link {cursor:pointer;}
 }
 
 /* header */
-#header {position:fixed; top:0; left:0; width:100%;}
+#header {position:fixed; top:0; left:0; width:100%; padding:30px 25px; z-index:100;}
+#header .h-inner {display:flex;}
+#header .h-inner .h-logo {}
+#header .h-inner .h-logo a {}
+#header .h-inner .h-logo a svg {width:55px;}
+
+@media (max-width:767px) {
+#header {padding:20px 20px;}
+#header .h-inner .h-logo a svg {width:40px;}
+}
 
 /* main-visual */
 .main-visual {background-color:#000;}
 .main-visual .main-intro {position:relative; height:calc(100vh); overflow:hidden;}
 .main-visual .main-intro .m-title {position:absolute; top:47%; left:50%; text-align:center; -webkit-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
 .main-visual .main-intro .m-title .t-sec {mix-blend-mode:difference; overflow:hidden;}
-.main-visual .main-intro .m-title .t-sec span {display:block; color:#fff; font-weight:800; letter-spacing:-0.01em; line-height:130%; white-space:nowrap; transform:translateY(110%); transition:all 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.main-visual .main-intro .m-title .t-sec span {display:block; color:#fff; font-weight:800; letter-spacing:-0.01em; line-height:110%; white-space:nowrap; transform:translateY(110%); transition:all 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .main-visual .main-intro .m-title .t-sec:first-child span {font-size:10vw;}
 .main-visual .main-intro .m-title .t-sec:last-child span {font-size:10vw; transition-delay:0.2s;}
 .page-complete .main-visual .main-intro .m-title .t-sec span {transform:translateY(0);}
@@ -209,21 +218,26 @@ a:-webkit-any-link {cursor:pointer;}
 		top:105%
 	}
 }
-.main-visual .main-story {display:flex; padding-top:10%; padding-bottom:10%;}
+.main-visual .main-intro .m-effect {opacity:0; perspective:2000px; position:absolute; top:0; right:0; bottom:0; left:0; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; justify-content:center; transition:all 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.page-complete .main-visual .main-intro .m-effect {opacity:1;}
+.main-visual .main-intro .m-effect .m-figure {position:relative; width:70vh; height:60vh; margin-bottom:3%; background-color:#000; overflow:hidden;}
+.main-visual .main-intro .m-effect .m-figure video {object-fit:cover; position:absolute; top:50%; left:50%; width:auto; height:100%; -webkit-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%);}
+.main-visual .main-story {display:flex; padding:10% 5%;}
 .main-visual .main-story .about-photo {width:48%;}
 .main-visual .main-story .about-photo .p-thumb {position:relative; display:block; overflow:hidden;}
 .main-visual .main-story .about-photo .p-thumb:before {content:""; display:block; padding-top:100%;}
 .main-visual .main-story .about-photo .p-thumb img {position:absolute; top:50%; left:50%; width:100%; height:auto; -webkit-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%);}
 .main-visual .main-story .about-me {width:52%; padding:2% 5%; mix-blend-mode:difference;}
-.main-visual .main-story .about-me p {margin-bottom:5%; color:#fff; font-size:2vw; font-weight:300; font-family:'Noto Sans KR'; line-height:160%; letter-spacing:-0.024em;}
-.main-visual .main-story .about-me p:first-child {color:#303030; font-size:5.2vw; font-weight:600; line-height:120%;}
+.main-visual .main-story .about-me p {margin-bottom:5%; color:#fff; font-size:1.8vw; font-weight:300; font-family:'Noto Sans KR'; line-height:160%; letter-spacing:-0.024em;}
+.main-visual .main-story .about-me p:first-child {color:#303030; font-size:5vw; font-weight:600; line-height:120%;}
 .main-visual .main-story .about-me p:last-child {margin-bottom:0;}
 
 @media (max-width:767px) {
 .main-visual .main-intro .scroll-down .sc-box .sc-txt {font-size:14px;}
 .main-visual .main-intro .scroll-down .sc-box .sc-bar {height:50px;}
 .main-visual .main-intro .scroll-down .sc-box .sc-bar:after {height:50px;}
-.main-visual .main-story {display:block;}
+.main-visual .main-intro .m-effect .m-figure {width:100%; height:60vh; margin-right:10%; margin-bottom:3%; margin-left:10%;}
+.main-visual .main-story {display:block; padding-right:0; padding-left:0;}
 .main-visual .main-story .about-photo {width:100%;}
 .main-visual .main-story .about-me {width:100%; padding:8% 5% 5% 5%;}
 .main-visual .main-story .about-me p {font-size:4.5vw;}
