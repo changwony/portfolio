@@ -64,6 +64,14 @@ $(function(){
 		document.getElementsByClassName('m-figure')[0].style.transform = 'rotateY('+yDegrees+'deg) rotateX('+xDegrees+'deg)';
 	}
 
+	$('.target-link').click(function(e){
+		e.preventDefault();
+		var target = $(this).attr('href');
+		var targetOffset = $(target).offset();
+		var targetPos = targetOffset.top;
+		$('html, body').animate({scrollTop : targetPos}, 600);
+	});
+
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.utils.toArray('#wrap').forEach(function(section){
 		ScrollTrigger.matchMedia({
@@ -210,8 +218,8 @@ $(window).on('resize', function(){
 
 $(window).scroll(function(){
 	if($(window).scrollTop() >= 100) {
-		$('.scroll-down').addClass('hidden');
+		$('#header, .scroll-down').addClass('hidden');
 	}else{
-		$('.scroll-down').removeClass('hidden');
+		$('#header, .scroll-down').removeClass('hidden');
 	}
 });
