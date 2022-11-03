@@ -1,4 +1,5 @@
 var windowResizeTimer = null;
+var dwidth = $(window).width();
 function introAni(){
 	$('body').addClass('page-loading');
 	$('.i-tit').delay(100).queue(function(next) {
@@ -213,7 +214,11 @@ $(window).on('resize', function(){
 	clearTimeout(windowResizeTimer);
 	windowResizeTimer = setTimeout(function(){
 		//ScrollTrigger.refresh();
-		scrollTo(0,0);	
+		var wwidth = $(window).width();
+		if(dwidth!==wwidth){
+			dwidth = $(window).width();
+			scrollTo(0,0);	
+		}
 	}, 300);
 });
 
