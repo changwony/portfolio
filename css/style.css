@@ -340,7 +340,7 @@ a:-webkit-any-link {cursor:pointer;}
 .contact-area .ct-title .t-sec {position:relative; overflow:hidden;}
 .contact-area .ct-title .t-sec span {display:block; color:#fff; font-size:9vw; font-weight:800; line-height:100%; letter-spacing:-0.01em; transform:translateY(110%); transition:transform 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .contact-area.active .ct-title .t-sec span {transform:translateY(0);}
-.contact-area .ct-info {opacity:0; margin-bottom:4%; padding-right:1%; padding-left:1%; overflow:hidden; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
+.contact-area .ct-info {opacity:0; margin-bottom:5%; padding-right:1%; padding-left:1%; overflow:hidden; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .contact-area.active .ct-info {opacity:1; transition-delay:.5s;}
 .contact-area .ct-info dl {position:relative; margin-top:3%;}
 .contact-area .ct-info dl:first-child {margin-top:0;}
@@ -349,6 +349,7 @@ a:-webkit-any-link {cursor:pointer;}
 .contact-area .ct-btm {opacity:0; padding-right:1%; padding-left:1%; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .contact-area.active .ct-btm {opacity:1; transition-delay:.5s;}
 .contact-area .ct-btm .btn-contact {display:inline-block; padding:1.2% 3%; color:#fff; font-size:1.5vw; font-weight:300; line-height:140%; letter-spacing:-0.01em; border:1px solid #fff; border-radius:70px; vertical-align:middle;}
+.contact-area .ct-btm .btn-career {position:relative; display:inline-block; padding:18px 28px; color:#9bf50b; font-size:1.5vw; font-weight:300; line-height:110%; letter-spacing:-0.01em; border:1px solid #9bf50b; border-radius:50px; font-family:'Noto Sans KR'; vertical-align:middle;}
 .contact-area .go-top {opacity:0; position:absolute; right:15%; bottom:60px; display:block; width:300px; height:300px; transform:rotate(225deg); overflow:hidden; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .contact-area.active .go-top {opacity:.3; transition-delay:.5s;}
 .contact-area .go-top:before, .contact-area .go-top:after {content:""; display:block;}
@@ -365,11 +366,12 @@ a:-webkit-any-link {cursor:pointer;}
 .contact-area {padding:15% 5%;}
 .contact-area .ct-title {margin-bottom:8%;}
 .contact-area .ct-title .t-sec span {font-size:13vw; letter-spacing:-0.03em;}
-.contact-area .ct-info {margin-bottom:9%;}
+.contact-area .ct-info {margin-bottom:10%;}
 .contact-area .ct-info dl {margin-top:7%;}
 .contact-area .ct-info dl dt {font-size:3vw;}
 .contact-area .ct-info dl dd, .contact-area .ct-info dl dd a {font-size:4vw;}
 .contact-area .ct-btm .btn-contact {padding:2.5% 5%; font-size:2.8vw;}
+.contact-area .ct-btm .btn-career {padding:15px 20px; font-size:3.5vw;}
 .contact-area .go-top {right:10%; bottom:10px; width:60px; height:60px;}
 .contact-area .go-top:before {height:120px;}
 .contact-area .go-top:after {width:58px; height:58px;}
