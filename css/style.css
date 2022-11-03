@@ -362,7 +362,7 @@ a:-webkit-any-link {cursor:pointer;}
 }
 
 @media (max-width:767px) {
-.contact-area {padding:15% 5%;}
+.contact-area {padding:15% 5% 20% 5%;}
 .contact-area .ct-title {margin-bottom:8%;}
 .contact-area .ct-title .t-sec span {font-size:13vw; letter-spacing:-0.03em;}
 .contact-area .ct-info {margin-bottom:10%;}
