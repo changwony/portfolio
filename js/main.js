@@ -213,7 +213,8 @@ $(window).on('resize', function(){
 	clearTimeout(windowResizeTimer);
 	windowResizeTimer = setTimeout(function(){
 		//ScrollTrigger.refresh();
-	}, 1000);
+		scrollTo(0,0);	
+	}, 300);
 });
 
 $(window).scroll(function(){
