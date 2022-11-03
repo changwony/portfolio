@@ -106,7 +106,7 @@ $(function(){
 					},
 					defaults: {ease: 'none'}
 				});
-				projectList.fromTo(section.querySelector('.project-list'), {x: 0, yPercent: -0, rotationX: 0, rotationY: 0, rotationZ: 0}, {x: '-68.5%', yPercent: 0, rotationX: 0, rotationY: 0, rotationZ: 0}, 0); //PLsum 원래 이값
+				projectList.fromTo(section.querySelector('.project-list'), {x: 0, yPercent: -0, rotationX: 0, rotationY: 0, rotationZ: 0}, {x: '-75.5%', yPercent: 0, rotationX: 0, rotationY: 0, rotationZ: 0}, 0); //PLsum 원래 이값
 				//gsap.set('.p-box', {transformOrigin: 'right center', force3D: true});
 
 			}, 

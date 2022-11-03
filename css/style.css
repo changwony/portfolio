@@ -277,7 +277,7 @@ a:-webkit-any-link {cursor:pointer;}
 .project-area .pr-title .t-sec {position:relative; overflow:hidden;}
 .project-area .pr-title .t-sec span {display:block; color:#000; font-size:9vw; font-weight:800; line-height:100%; letter-spacing:-0.01em; transform:translateY(110%); transition:transform 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .project-area.active .pr-title .t-sec span {transform:translateY(0);}
-.project-area .project-list {display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; flex-wrap:nowrap; width:315%; height:calc(100vh); padding:6% 3%;}
+.project-area .project-list {display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-align:center; -webkit-align-items:center; align-items:center; flex-wrap:nowrap; width:405%; height:calc(100vh); padding:6% 3%;}
 .project-area .project-list .project-sec {opacity:0; width:45%; padding-right:1%; padding-left:1%; text-align:center; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .project-area.active .project-list .project-sec {opacity:1;}
 .project-area .project-list .project-sec .p-box {position:relative; display:block; text-align:left;}
@@ -349,7 +349,7 @@ a:-webkit-any-link {cursor:pointer;}
 .contact-area .ct-btm {opacity:0; padding-right:1%; padding-left:1%; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .contact-area.active .ct-btm {opacity:1; transition-delay:.5s;}
 .contact-area .ct-btm .btn-contact {display:inline-block; padding:1.2% 3%; color:#fff; font-size:1.5vw; font-weight:300; line-height:140%; letter-spacing:-0.01em; border:1px solid #fff; border-radius:70px; vertical-align:middle;}
-.contact-area .ct-btm .btn-career {position:relative; display:inline-block; padding:18px 28px; color:#9bf50b; font-size:1.5vw; font-weight:300; line-height:110%; letter-spacing:-0.01em; border:1px solid #9bf50b; border-radius:50px; font-family:'Noto Sans KR'; vertical-align:middle;}
+.contact-area .ct-btm .btn-career {position:relative; display:inline-block; padding:18px 28px; color:#9bf50b; font-size:1.5vw; font-weight:300; line-height:110%; letter-spacing:-0.01em; border:1px solid #84cd0f; border-radius:50px; font-family:'Noto Sans KR'; vertical-align:middle;}
 .contact-area .go-top {opacity:0; position:absolute; right:15%; bottom:60px; display:block; width:300px; height:300px; transform:rotate(225deg); overflow:hidden; transition:opacity 1.3s cubic-bezier(0.23, 1, 0.38, 1);}
 .contact-area.active .go-top {opacity:.3; transition-delay:.5s;}
 .contact-area .go-top:before, .contact-area .go-top:after {content:""; display:block;}
