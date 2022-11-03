@@ -70,7 +70,7 @@ $(function(){
 		var target = $(this).attr('href');
 		var targetOffset = $(target).offset();
 		var targetPos = targetOffset.top;
-		$('html, body').animate({scrollTop : targetPos}, 600);
+		$('html, body').animate({scrollTop : targetPos}, 1000);
 	});
 
 	gsap.registerPlugin(ScrollTrigger);
