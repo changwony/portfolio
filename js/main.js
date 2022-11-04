@@ -124,7 +124,7 @@ $(function(){
 				});
 				mainIntro.fromTo(section.querySelector('.m-title .t-sec.nht1'), {xPercent: 0}, {xPercent: 100}, 0)
 				.fromTo(section.querySelector('.m-title .t-sec.nht2'), {xPercent: 0}, {xPercent: -100}, 0)
-				.fromTo(section.querySelector('.m-effect'), {rotationY: 0}, {rotationY: -360, opacity: 0}, 0);
+				.fromTo(section.querySelector('.m-effect'), {rotationY: 0}, {rotationY: -270}, 0);
 
 				var mainStory = gsap.timeline({
 					scrollTrigger: {
