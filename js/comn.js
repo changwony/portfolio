@@ -46,25 +46,4 @@
 		});
 	});
 
-	$('.modal-open').on('click', function(){
-		$( $(this).attr('href') ).fadeIn(300).addClass('on').append('<button type="button" class="btn-modal-gotop"><span class="blind">위로가기</span></button>');
-		$('body').addClass('modal-scroll');
-		$(this).attr('data-focus','on');
-		$('.btn-modal-gotop').click(function(){
-			$('.modal-wrap').animate({
-				scrollTop:0
-			},400);
-				return false;
-		});
-	});
-	$('.btn-modal-close').on('click', function(){
-		$(this).closest('.modal-wrap').fadeOut(300).removeClass('on');
-		$('body').removeClass('modal-scroll');
-		$('.btn-modal-gotop').remove();
-		$('a[data-focus~=on]').focus();
-		window.setTimeout(function(){
-			$('a[data-focus~=on]').removeAttr('data-focus');
-		},500);
-	});
-
  });

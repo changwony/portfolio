@@ -124,7 +124,8 @@ $(function(){
 				});
 				mainIntro.fromTo(section.querySelector('.m-title .t-sec.nht1'), {xPercent: 0}, {xPercent: 100}, 0)
 				.fromTo(section.querySelector('.m-title .t-sec.nht2'), {xPercent: 0}, {xPercent: -100}, 0)
-				.fromTo(section.querySelector('.m-effect'), {rotationY: 0}, {rotationY: -270}, 0);
+				.fromTo(section.querySelector('.m-effect'), {rotationY: 0}, {rotationY: -270}, 0)
+				.fromTo(section.querySelector('.m-figure'), {opacity: 1}, {opacity: 0}, 0);
 
 				var mainStory = gsap.timeline({
 					scrollTrigger: {
@@ -201,6 +202,59 @@ $(function(){
 			}
 		});
 
+	});
+
+	var $prfItem = $('.pr-item');
+	//$prfItem.hide();
+	var $prfArea = $('.pr-list');
+	$prfArea.imagesLoaded(function(){
+		$prfItem.addClass('on');
+		$prfArea.masonry({
+			itemSelector: '.pr-item',
+			columnWidth: '.pr-sizer',
+			horizontalOrder: true,
+			percentPosition: true,
+			//filtersGroupSelector: '.tab-kind'
+		});
+	});
+	$('.tab-kind .t-item .btn-tab-cate').click(function() {
+		var group = $(this).data('category');
+		var group_class = "." + group;
+		if(group == "*"){
+			$('.pr-item').show();
+			$prfArea.masonry('layout');
+		   }
+		else if(group != "") {
+			$('.pr-item').hide();
+			$(group_class).show();
+			$prfArea.masonry('layout');
+		} else {
+			$('.pr-item').show();
+			$prfArea.masonry('layout');
+		}
+	});
+	$('.modal-open').on('click', function(){
+		$( $(this).attr('href') ).fadeIn(300).addClass('on').append('<button type="button" class="btn-modal-gotop"><span class="blind">위로가기</span></button>');
+		$('body').addClass('modal-scroll');
+		//$(this).attr('data-focus','on');
+		$prfArea.masonry();
+		$('.btn-modal-gotop').click(function(){
+			$('.modal-wrap').animate({
+				scrollTop:0
+			},400);
+				return false;
+		});
+	});
+	$('.btn-modal-close').on('click', function(){
+		$(this).closest('.modal-wrap').fadeOut(300).removeClass('on');
+		$('body').removeClass('modal-scroll');
+		$('.btn-modal-gotop').remove();
+		/*
+		$('a[data-focus~=on]').focus();
+		window.setTimeout(function(){
+			$('a[data-focus~=on]').removeAttr('data-focus');
+		},500);
+		*/
 	});
 
 });
