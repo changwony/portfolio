@@ -390,10 +390,6 @@ a:-webkit-any-link {cursor:pointer;}
 .tab-kind .t-item label {display:block; cursor:none; color:#424242; font-size:1.8vw; font-weight:800; line-height:100%; letter-spacing:-0.001em; word-break:keep-all; transition:color .15s ease-out;}
 .tab-kind .t-item input[type=radio]:checked ~ label {color:#fff;}
 
-@media (max-width:1023px) {
-
-}
-
 @media (max-width:767px) {
 .tab-kind {margin-bottom:6%;}
 .tab-kind .t-item {margin:2% 1%; padding-right:0; padding-left:0;}
@@ -426,15 +422,11 @@ a:-webkit-any-link {cursor:pointer;}
 .pr-list .pr-item .p-box:hover .p-thumb .p-img {transform:scale(1.08) rotate(.1deg);}
 }
 
-@media (max-width:1023px) {
-
-}
-
 @media (max-width:767px) {
 .pr-list {margin-right:-1%; margin-left:-1%;}
 .pr-list .pr-item {padding:2% 1%;}
 .pr-list .pr-item, .pr-list .pr-sizer {width:50%;}
-.pr-list .pr-item .p-box .p-info .p-kind {font-size:3.1vw;}
+.pr-list .pr-item .p-box .p-info .p-kind {display:none; font-size:3.1vw;}
 .pr-list .pr-item .p-box .p-info .p-kind em {padding-right:10px; padding-left:10px;}
 .pr-list .pr-item .p-box .p-info .p-tit {font-size:4.2vw;}
 .pr-list .pr-item .btn-pr-more span {font-size:8vw;}
@@ -452,9 +444,9 @@ a:-webkit-any-link {cursor:pointer;}
 
 /* modal-wrap */
 .modal-wrap {display:none; position:fixed; top:0; right:0; bottom:0; left:0; overflow-x:hidden; overflow-y:auto; -webkit-overflow-scrolling:touch; outline:0; background-color:#000; z-index:1201;}
-.modal-wrap .modal-area {max-width:100%; margin:7% auto; padding-right:1%; padding-left:1%;}
-.modal-wrap .modal-area .modal-cont {position:relative; transform:scale(1) translateY(-50px); transition:transform .4s ease-out;}
-.modal-wrap.on .modal-area .modal-cont {transform:scale(1) translateY(0);}
+.modal-wrap .modal-area {perspective:3000px; max-width:100%; margin:7% auto; padding-right:1%; padding-left:1%;}
+.modal-wrap .modal-area .modal-cont {position:relative; opacity:1; transform:scale(1) translateX(-5%) translateY(0) rotateY(-20deg); transition:opacity .4s ease-out, transform .4s ease-out;}
+.modal-wrap.on .modal-area .modal-cont {opacity:1; transform:scale(1) translateY(0);}
 .modal-wrap .btn-modal-close {display:block; position:absolute; top:5%; right:3%; width:40px; height:40px; cursor:none; background-color:transparent; border:none; overflow:hidden;}
 .modal-wrap .btn-modal-close:before, .modal-wrap .btn-modal-close:after {content:""; display:block; width:40px; height:2px; background-color:#fff;}
 .modal-wrap .btn-modal-close:before {-webkit-transform:rotate(45deg) translate(1px, 1px); transform:rotate(45deg) translate(1px, 1px);}
