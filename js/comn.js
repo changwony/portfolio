@@ -46,4 +46,8 @@
 		});
 	});
 
+	$('body').one('mouseenter', function(){
+		$('.cursor').addClass('on');
+	});
+
  });
