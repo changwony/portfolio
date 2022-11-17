@@ -46,7 +46,7 @@
 		});
 	});
 
-	$('body').one('mouseenter', function(){
+	$('body').one('mouseover', function(){
 		$('.cursor').addClass('on');
 	});
 
